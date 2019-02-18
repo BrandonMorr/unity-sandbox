@@ -2,7 +2,7 @@
 
 public class RotateCube : MonoBehaviour
 {
-    public float spinforce;
+    public float spinForce;
 
     private bool isSpinning = false;
 
@@ -10,7 +10,7 @@ public class RotateCube : MonoBehaviour
     {
         if (isSpinning)
         {
-            transform.Rotate(0, spinforce * Time.deltaTime, 0);
+            transform.Rotate(0, spinForce * Time.deltaTime, 0);
         }
         else
         {
