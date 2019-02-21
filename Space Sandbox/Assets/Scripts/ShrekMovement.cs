@@ -2,22 +2,18 @@
 
 public class ShrekMovement : MonoBehaviour
 {
-    private float sizeMultiplier;
-    private float rotationMultiplier;
-    private float sizeConstant = 1;
-    public Vector3 RotateAmount;
-
     void Awake()
     {
-        sizeMultiplier = Random.Range(0, 5f);
-        transform.localScale = new Vector3(sizeConstant * sizeMultiplier, sizeConstant * sizeMultiplier, sizeConstant * sizeMultiplier);
-
-        rotationMultiplier = Random.Range(0, 360f);
-        RotateAmount = new Vector3(rotationMultiplier, rotationMultiplier, rotationMultiplier);
+        float scale = Random.Range(1f, 3f);
+        transform.localScale = new Vector3(scale, scale, scale);
     }
 
     void Update()
     {
-        transform.Rotate(RotateAmount * (Time.deltaTime * Random.Range(0f, 1f)));
+        // Rotate on x axis
+        transform.Rotate(Vector3.right * Time.deltaTime);
+
+        // Rotate on y axis
+        transform.Rotate(Vector3.up * Time.deltaTime);
     }
 }

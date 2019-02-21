@@ -6,10 +6,10 @@ public class PlayerFly : MonoBehaviour
 {
     public float playerSpeed;
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        // We move the player with the second touch input
+        if (Input.touchCount > 1)
         {
             transform.position = transform.position + (Camera.main.transform.forward * playerSpeed * Time.deltaTime);
         }
